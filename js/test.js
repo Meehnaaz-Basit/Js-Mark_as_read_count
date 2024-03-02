@@ -1,3 +1,4 @@
+let clickCount = 0;
 // fetch all post
 
 const allPost = async () => {
@@ -9,7 +10,7 @@ const allPost = async () => {
   //   console.log(post);
   const postContainer = document.getElementById("post-container");
   posts.forEach((post) => {
-    console.log(post);
+    // console.log(post);
     const postDiv = document.createElement("div");
     postDiv.classList = "bg-[#F3F3F5] p-12 rounded-3xl my-4";
     postDiv.innerHTML = `
@@ -64,7 +65,7 @@ const allPost = async () => {
                         </div>
                       </div>
                       <div>
-                        <button>
+                        <button id="markReadBtn">
                           <img src="images/message-btn.png" alt="" />
                         </button>
                       </div>
@@ -73,7 +74,31 @@ const allPost = async () => {
                 </div>
     `;
     postContainer.appendChild(postDiv);
+
+    const markReadBtn = postDiv.querySelector("#markReadBtn");
+    const postClickedList = document.getElementById("clicked-posts-list");
+    const count = document.getElementById("count");
+    markReadBtn.addEventListener("click", () => {
+      //   console.log("clicked");
+      const listPost = document.createElement("div");
+      listPost.classList =
+        "bg-white p-4 rounded-xl flex justify-between gap-5 mt-3";
+      listPost.innerHTML = `
+                    <p class="w-[85%] font-mulish font-bold text-our-primary">
+                      ${post.title}
+                    </p>
+                    <div class="flex items-center gap-2">
+                      <img src="images/view.png" alt="" />
+                      <span>${post.view_count}</span>
+                    </div>
+      `;
+      postClickedList.appendChild(listPost);
+      clickCount = clickCount + 1;
+      count.innerText = clickCount;
+    });
   });
 };
+
+// Add event listener to the button
 
 allPost();
