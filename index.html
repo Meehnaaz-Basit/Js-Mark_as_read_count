@@ -11,10 +11,106 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- custom css -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#000",
+              "our-primary": "#12132D",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .font-mulish {
+        font-family: "Mulish", sans-serif;
+      }
+      .font-inter {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
   </head>
   <body>
     <header></header>
-    <main></main>
+    <main>
+      <section class="my-6 font-mulish">
+        <div class="container mx-auto max-w-[1200px] w-[90%] lg-w[84%]">
+          <!--  -->
+          <div
+            class="min-h-[70vh] bg-our-primary rounded-2xl bg-[url('images/bgbanner.png')] bg-no-repeat bg-cover bg-bottom"
+          >
+            <div class="flex justify-between p-20">
+              <!--  -->
+              <div>
+                <h1 class="text-white font-black lg:text-[64px]">
+                  Welcome to the <br />
+                  <span>ReTro</span> Forum
+                </h1>
+                <p class="text-[#FFFFFFCC]">
+                  Share your favorite opinion and win and wp forum coffee mug!
+                </p>
+                <div>
+                  <input type="text" placeholder="Search here anything" />
+                  <button>Search</button>
+                </div>
+              </div>
+              <!--  -->
+              <div class="bg-white">
+                <ul>
+                  <li>
+                    <span>Registered Users</span>
+                    <span>01</span>
+                  </li>
+                  <li>
+                    <span>Forum</span>
+                    <span>05</span>
+                  </li>
+                  <li>
+                    <span>Topics</span>
+                    <span>01</span>
+                  </li>
+                  <li>
+                    <span>Replies</span>
+                    <span>01</span>
+                  </li>
+                </ul>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </section>
+      <section class="let-discuss my-10 py-10">
+        <div class="container mx-auto max-w-[1200px] w-[90%] lg-w[84%]">
+          <!--  -->
+          <div class="heading w-[50%] mx-auto text-center space-y-3">
+            <h3 class="font-mulish font-black text-[40px] text-our-primary">
+              Lets's Discuss
+            </h3>
+            <p class="font-inter text[#12132D99]">
+              Yes, you can run unit tests and view the results directly within
+              the app. The integrated testing features allow for a streamlined .
+            </p>
+          </div>
+          <!--  -->
+          <div class="flex">
+            <div class="basis-8/12"></div>
+            <div class="basis-4/12 h-20 bg-red-600"></div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
     <script src="js/script.js"></script>
     <script src="js/test.js"></script>
