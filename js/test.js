@@ -82,7 +82,7 @@ const allPost = async () => {
       //   console.log("clicked");
       const listPost = document.createElement("div");
       listPost.classList =
-        "bg-white p-4 rounded-xl flex justify-between gap-5 mt-3";
+        "bg-white p-4 rounded-xl flex justify-between gap-5 my-3";
       listPost.innerHTML = `
                     <p class="w-[85%] font-mulish font-bold text-our-primary">
                       ${post.title}
@@ -101,4 +101,62 @@ const allPost = async () => {
 
 // Add event listener to the button
 
+const latestPost = async () => {
+  const request = await fetch(
+    "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
+  );
+  const data = await request.json();
+  //   console.log(data);
+  const latestPost = document.getElementById("latest-post");
+  data.forEach((post) => {
+    // console.log(post);
+    const postDiv = document.createElement("div");
+    postDiv.classList = "card bg-base-100 shadow-xl";
+    postDiv.innerHTML = `
+             <figure class="p-5">
+                <img
+                  src="${post.cover_image}"
+                  
+                  class="rounded-xl"
+                />
+              </figure>
+              <div class="card-body space-y-2">
+                <div class="flex gap-4">
+                  <img src="images/date.png" alt="" />
+                  <span>${
+                    post.author.posted_date
+                      ? post.author.posted_date
+                      : "No publish date"
+                  }</span>
+                </div>
+                <h2 class="card-title text-our-primary text-lg font-black">
+                  ${post.title}
+                </h2>
+                <p class="text-[#12132D99]">
+                 ${post.description}
+                </p>
+                <div class="flex gap-5 items-center">
+                  <div>
+                    <img class="w-16 h-16 rounded-full" src="${
+                      post.profile_image
+                    }" alt="" />
+                  </div>
+                  <div>
+                    <h3 class="text-our-primary font-extrabold">
+                      ${post.author.name}
+                    </h3>
+                    <p class="text-[#12132D99]">${
+                      post.author.designation
+                        ? post.author.designation
+                        : "Unknown"
+                    }</p>
+                  </div>
+                </div>
+              </div>
+    `;
+    latestPost.appendChild(postDiv);
+  });
+};
+
 allPost();
+latestPost();
