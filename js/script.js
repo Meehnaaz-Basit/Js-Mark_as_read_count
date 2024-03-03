@@ -1,3 +1,4 @@
+let clickCount = 0;
 // fetch all post
 
 const allPost = async () => {
@@ -9,7 +10,7 @@ const allPost = async () => {
   //   console.log(post);
   const postContainer = document.getElementById("post-container");
   posts.forEach((post) => {
-    console.log(post);
+    // console.log(post);
     const postDiv = document.createElement("div");
     postDiv.classList = "bg-[#F3F3F5] p-12 rounded-3xl my-4";
     postDiv.innerHTML = `
@@ -73,7 +74,89 @@ const allPost = async () => {
                 </div>
     `;
     postContainer.appendChild(postDiv);
+
+    const markReadBtn = postDiv.querySelector("#markReadBtn");
+    const postClickedList = document.getElementById("clicked-posts-list");
+    const count = document.getElementById("count");
+    markReadBtn.addEventListener("click", () => {
+      //   console.log("clicked");
+      const listPost = document.createElement("div");
+      listPost.classList =
+        "bg-white p-4 rounded-xl flex justify-between gap-5 my-3";
+      listPost.innerHTML = `
+                    <p class="w-[85%] font-mulish font-bold text-our-primary">
+                      ${post.title}
+                    </p>
+                    <div class="flex items-center gap-2">
+                      <img src="images/view.png" alt="" />
+                      <span>${post.view_count}</span>
+                    </div>
+      `;
+      postClickedList.appendChild(listPost);
+      clickCount = clickCount + 1;
+      count.innerText = clickCount;
+    });
+  });
+};
+
+// Add event listener to the button
+
+const latestPost = async () => {
+  const request = await fetch(
+    "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
+  );
+  const data = await request.json();
+  //   console.log(data);
+  const latestPost = document.getElementById("latest-post");
+  data.forEach((post) => {
+    // console.log(post);
+    const postDiv = document.createElement("div");
+    postDiv.classList = "card bg-base-100 shadow-xl";
+    postDiv.innerHTML = `
+             <figure class="p-5">
+                <img
+                  src="${post.cover_image}"
+                  
+                  class="rounded-xl"
+                />
+              </figure>
+              <div class="card-body space-y-2">
+                <div class="flex gap-4">
+                  <img src="images/date.png" alt="" />
+                  <span>${
+                    post.author.posted_date
+                      ? post.author.posted_date
+                      : "No publish date"
+                  }</span>
+                </div>
+                <h2 class="card-title text-our-primary text-lg font-black">
+                  ${post.title}
+                </h2>
+                <p class="text-[#12132D99]">
+                 ${post.description}
+                </p>
+                <div class="flex gap-5 items-center">
+                  <div>
+                    <img class="w-16 h-16 rounded-full" src="${
+                      post.profile_image
+                    }" alt="" />
+                  </div>
+                  <div>
+                    <h3 class="text-our-primary font-extrabold">
+                      ${post.author.name}
+                    </h3>
+                    <p class="text-[#12132D99]">${
+                      post.author.designation
+                        ? post.author.designation
+                        : "Unknown"
+                    }</p>
+                  </div>
+                </div>
+              </div>
+    `;
+    latestPost.appendChild(postDiv);
   });
 };
 
 allPost();
+latestPost();

@@ -43,43 +43,58 @@
   <body>
     <header></header>
     <main>
+      <!-- ======== banner ======= -->
       <section class="my-6 font-mulish">
         <div class="container mx-auto max-w-[1200px] w-[90%] lg-w[84%]">
           <!--  -->
           <div
             class="min-h-[70vh] bg-our-primary rounded-2xl bg-[url('images/bgbanner.png')] bg-no-repeat bg-cover bg-bottom"
           >
-            <div class="flex justify-between p-20">
+            <div class="flex justify-between items-center p-20">
               <!--  -->
-              <div>
+              <div class="basis-1/2">
                 <h1 class="text-white font-black lg:text-[64px]">
-                  Welcome to the <br />
-                  <span>ReTro</span> Forum
+                  Welcome to the <br /><span class="text-[#797DFC]">ReTro</span>
+                  Forum
                 </h1>
-                <p class="text-[#FFFFFFCC]">
+                <p class="text-[#FFFFFFCC] text-xl font-medium my-4 lg:pr-20">
                   Share your favorite opinion and win and wp forum coffee mug!
                 </p>
-                <div>
-                  <input type="text" placeholder="Search here anything" />
-                  <button>Search</button>
+                <div
+                  class="bg-white inline-flex justify-between p-2 border-0 rounded-full mt-6"
+                >
+                  <input
+                    id="searchInput"
+                    class="p-2 focus:outline-none rounded-full bg-transparent"
+                    type="text"
+                    placeholder="Search here anything"
+                  />
+                  <button
+                    id="searchCategory"
+                    class="bg-[#797DFC] text-white text-xl font-bold px-6 py-2 rounded-full"
+                  >
+                    Search
+                  </button>
                 </div>
               </div>
               <!--  -->
-              <div class="bg-white">
-                <ul>
-                  <li>
+              <div
+                class="bg-white h-min *:text-[#12132DCC] *:text-2xl *:font-semibold basis-1/3 p-10 rounded-2xl"
+              >
+                <ul class="space-y-5">
+                  <li class="flex justify-between">
                     <span>Registered Users</span>
                     <span>01</span>
                   </li>
-                  <li>
+                  <li class="flex justify-between">
                     <span>Forum</span>
                     <span>05</span>
                   </li>
-                  <li>
+                  <li class="flex justify-between">
                     <span>Topics</span>
                     <span>01</span>
                   </li>
-                  <li>
+                  <li class="flex justify-between">
                     <span>Replies</span>
                     <span>01</span>
                   </li>
@@ -91,6 +106,7 @@
           <!--  -->
         </div>
       </section>
+      <!-- ====== let's discuss ====== -->
       <section class="let-discuss my-10 py-10">
         <div class="container mx-auto max-w-[1200px] w-[90%] lg-w[84%]">
           <!--  -->
@@ -205,7 +221,7 @@
     </main>
     <footer></footer>
     <!-- <script src="js/script.js"></script> -->
-    <script src="js/test.js"></script>
-    <!-- <script src="js/test2.js"></script> -->
+    <!-- <script src="js/test.js"></script> -->
+    <script src="js/test2.js"></script>
   </body>
 </html>
