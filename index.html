@@ -11,6 +11,11 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font icon -->
+    <script
+      src="https://kit.fontawesome.com/ecf551110a.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,20 +46,110 @@
     </style>
   </head>
   <body>
-    <header></header>
+    <header class="font-mulish pt-2">
+      <div class="container mx-auto max-w-[1200px] w-[96%] lg-w[84%]">
+        <!--  -->
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Home</a></li>
+                <li><a>Edit</a></li>
+                <li><a>User</a></li>
+                <li><a>Country</a></li>
+              </ul>
+            </div>
+            <a class="text-4xl text-our-primary font-black">ZeNith</a>
+          </div>
+          <!-- <div class="navbar-end hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Item 1</a></li>
+              <li>
+                <details>
+                  <summary>Parent</summary>
+                  <ul class="p-2">
+                    <li><a>Submenu 1</a></li>
+                    <li><a>Submenu 2</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </div> -->
+          <div class="navbar-end">
+            <!--  -->
+            <div class="hidden lg:flex gap-2 mr-4">
+              <div
+                class="tooltip tooltip-bottom w-12 h-12 rounded-full bg-[#12132D08] border-[#0307121A] border-2"
+                data-tip="Home"
+              >
+                <i class="fa-solid fa-house mt-3 text-[#12132D99]"></i>
+              </div>
+              <div
+                class="tooltip tooltip-bottom w-12 h-12 rounded-full bg-[#12132D08] border-[#0307121A] border-2"
+                data-tip="Edit"
+              >
+                <i class="fa-solid fa-pen mt-3 text-[#12132D99]"></i>
+              </div>
+              <div
+                class="tooltip tooltip-bottom w-12 h-12 rounded-full bg-[#12132D08] border-[#0307121A] border-2"
+                data-tip="User"
+              >
+                <i class="fa-solid fa-user-plus mt-3 text-[#12132D99]"></i>
+              </div>
+              <div
+                class="tooltip tooltip-bottom w-12 h-12 rounded-full bg-[#12132D08] border-[#0307121A] border-2"
+                data-tip="Country"
+              >
+                <i class="fa-regular fa-flag mt-3 text-[#12132D99]"></i>
+              </div>
+            </div>
+            <!--  -->
+            <a
+              class="btn bg-[#797DFC] text-white text-xl font-semibold rounded-full px-6"
+              >Sign In</a
+            >
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </header>
     <main>
       <!-- ======== banner ======= -->
       <section class="my-6 font-mulish">
-        <div class="container mx-auto max-w-[1200px] w-[90%] lg-w[84%]">
+        <div class="container mx-auto max-w-[1200px] w-[96%] lg-w[84%]">
           <!--  -->
           <div
-            class="min-h-[70vh] bg-our-primary rounded-2xl bg-[url('images/bgbanner.png')] bg-no-repeat bg-cover bg-bottom"
+            class="lg:min-h-[70vh] bg-our-primary rounded-2xl bg-[url('images/bgbanner.png')] bg-no-repeat bg-cover bg-bottom p-10"
           >
-            <div class="flex justify-between items-center p-20">
+            <div
+              class="flex lg:flex-row flex-col justify-between items-center lg:p-10"
+            >
               <!--  -->
-              <div class="basis-1/2">
-                <h1 class="text-white font-black lg:text-[64px]">
-                  Welcome to the <br /><span class="text-[#797DFC]">ReTro</span>
+              <div class="basis-1/2 lg:text-left text-center">
+                <h1 class="text-white font-black lg:text-[64px] text-[40px]">
+                  Welcome to the <br /><span class="text-[#797DFC]"
+                    >ZeNith</span
+                  >
                   Forum
                 </h1>
                 <p class="text-[#FFFFFFCC] text-xl font-medium my-4 lg:pr-20">
@@ -79,9 +174,9 @@
               </div>
               <!--  -->
               <div
-                class="bg-white h-min *:text-[#12132DCC] *:text-2xl *:font-semibold basis-1/3 p-10 rounded-2xl"
+                class="bg-white h-min *:text-[#12132DCC] *:lg:text-2xl *:font-semibold lg:basis-1/3 lg:p-10 rounded-2xl w-full lg:mt-0 mt-6 p-4"
               >
-                <ul class="space-y-5">
+                <ul class="lg:space-y-5">
                   <li class="flex justify-between">
                     <span>Registered Users</span>
                     <span>01</span>
@@ -107,11 +202,13 @@
         </div>
       </section>
       <!-- ====== let's discuss ====== -->
-      <section class="let-discuss my-10 py-10">
+      <section class="let-discuss lg:my-10 lg:py-10 py-4">
         <div class="container mx-auto max-w-[1200px] w-[90%] lg-w[84%]">
           <!--  -->
-          <div class="heading w-[50%] mx-auto text-center space-y-3">
-            <h3 class="font-mulish font-black text-[40px] text-our-primary">
+          <div class="heading lg:w-[50%] mx-auto text-center space-y-3">
+            <h3
+              class="font-mulish font-black lg:text-[40px] text-3xl text-our-primary"
+            >
               Lets's Discuss
             </h3>
             <p class="font-inter text[#12132D99]">
@@ -120,15 +217,28 @@
             </p>
           </div>
           <!--  -->
-          <div class="flex gap-5 mt-8">
+
+          <!--  -->
+          <div class="flex lg:flex-row flex-col gap-5 mt-8">
             <!-- left box -->
-            <div class="basis-8/12" id="post-container">
+            <div class="lg:basis-8/12" id="post-container">
+              <!-- loading  -->
+              <!-- <div class="text-center mt-10">
+               
+              </div> -->
+              <!--  -->
               <!--  -->
 
               <!--  -->
+              <!-- loader -->
+              <div id="allPostLoader" class="lg:p-12 p-6 my-4 text-center">
+                <span class="loading loading-ring loading-lg"></span>
+              </div>
             </div>
             <!-- right box -->
-            <div class="basis-4/12 bg-[#12132D0D] h-min mt-4 rounded-2xl p-6">
+            <div
+              class="lg:basis-4/12 bg-[#12132D0D] h-min mt-4 rounded-2xl p-6"
+            >
               <div>
                 <!-- title -->
                 <div class="flex justify-between gap-4">
@@ -163,12 +273,43 @@
           </div>
         </div>
       </section>
+      <!-- ======== forum ========= -->
+      <section class="font-mulish">
+        <div class="container mx-auto max-w-[1200px] w-[96%] lg-w[84%]">
+          <div
+            class="bg-[#12132D] rounded-2xl lg:p-20 p-10 text-white flex lg:flex-row flex-col justify-between items-center"
+          >
+            <!-- left -->
+            <div
+              class="space-y-8 lg:basis-3/5 lg:pr-20 lg:text-left text-center"
+            >
+              <h2 class="font-black text-4xl">Join Our Forum</h2>
+              <p>
+                Share your favorite opinion and win and wp forum coffee mug!
+                Yes, you can run unit tests and view the results directly within
+                the app.
+              </p>
+              <button
+                class="btn bg-[#797DFC] rounded-full border-0 text-white font-semibold text-xl px-8"
+              >
+                Register Now
+              </button>
+            </div>
+            <!-- right -->
+            <div class="lg:mt-0 mt-10">
+              <img src="images/joinforum.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- ========== latest post ========== -->
-      <section class="my-6 font-mulish">
+      <section class="my-6 font-mulish lg:my-10 lg:py-10 py-4">
         <div class="container mx-auto max-w-[1200px] w-[90%] lg-w[84%]">
           <!--  -->
-          <div class="heading w-[50%] mx-auto text-center space-y-3">
-            <h3 class="font-mulish font-black text-[40px] text-our-primary">
+          <div class="heading lg:w-[50%] mx-auto text-center space-y-3">
+            <h3
+              class="font-mulish font-black lg:text-[40px] text-3xl text-our-primary"
+            >
               Latest Posts
             </h3>
             <p class="font-inter text[#12132D99]">
@@ -176,8 +317,14 @@
               the app. The integrated testing features allow for a streamlined .
             </p>
           </div>
+          <div id="latestPostLoader" class="text-center mt-10">
+            <span class="loading loading-ring loading-lg"></span>
+          </div>
           <!--  -->
-          <div class="grid grid-cols-3 gap-8 mt-10" id="latest-post">
+          <div
+            class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-10"
+            id="latest-post"
+          >
             <!--  -->
             <!-- <div class="card bg-base-100 shadow-xl">
               <figure class="p-5">
@@ -219,9 +366,28 @@
         </div>
       </section>
     </main>
-    <footer></footer>
-    <!-- <script src="js/script.js"></script> -->
-    <!-- <script src="js/test.js"></script> -->
-    <script src="js/test2.js"></script>
+    <footer
+      class="footer footer-center py-16 bg-primary text-primary-content bg-[#12132D0D]"
+    >
+      <div class="container mx-auto max-w-[1200px] w-[90%] lg-w[84%]">
+        <aside class="lg:w-[40%] space-y-6">
+          <h1 class="text-our-primary text-4xl font-black">ZeNith</h1>
+          <p class="font-medium text-[#12132DB3]">
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC
+          </p>
+        </aside>
+        <div class="*:text-our-primary flex *:text-2xl gap-4 pt-10">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+        <div class="border w-full mt-10"></div>
+      </div>
+      <p class="text-[#12132D80]">Copyright © 2024 - All right reserved</p>
+    </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
